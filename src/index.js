@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.js';
-import {BrowserRouter} from 'react-router-dom';
+import SwipeWeather from './components/SwipeWeather.js';
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+
+
+ReactDOM.render(<SwipeWeather/>,
   document.getElementById('root')
 );
+

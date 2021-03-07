@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {Link, useLocation} from 'react-router-dom'
+// import {Link, useLocation} from 'react-router-dom'
 
 
 
@@ -11,7 +11,7 @@ const Weather = (props) => {
   const [weather, setWeather]=useState('');
   const [wind, setWind]=useState('');
 
-  const location=useLocation();
+  // const location=useLocation();
   const apiCall=async()=>{
     const API_KEY='2acceff38206283f50a4dc5d0aac6562';
     let city_name='';

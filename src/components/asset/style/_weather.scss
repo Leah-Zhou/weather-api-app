@@ -1,0 +1,21 @@
+// .swiper-container{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   img{
+//     width: 450px;
+//     display: block;
+//   }
+// }
+.small-text{
+  font-size: 13px;
+}
+
+.swiper-pagination-bullet{
+  background-color: white;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active{
+  background-image: linear-gradient(to right top, #fff29b, #a8f1af, #47e6dd, #28d0ff, #8cb1fd);
+  opacity:1;
+}

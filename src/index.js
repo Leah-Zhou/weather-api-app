@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SwipeWeather from './components/SwipeWeather.js';
+import App from './components/App.js';
+import './components/asset/style/style.scss';
 
-
-
-ReactDOM.render(<SwipeWeather/>,
+ReactDOM.render(<App/>,
   document.getElementById('root')
 );
 

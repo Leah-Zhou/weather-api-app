@@ -1,0 +1,10 @@
+
+@import '_colors.scss';
+.container{
+  width: 375px;
+  height: 667px;
+  background-color:$bgColor;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 5px 8px 15px 10px $shadowColor;
+}

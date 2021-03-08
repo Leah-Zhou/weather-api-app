@@ -30,7 +30,14 @@ const SwipeWeather = () => {
     flexDirection:"row",
     justifyContent: "center",
     alignItems:"center",
-    margin: "0 10px"
+    margin: "10px",
+  }
+  const mainInfoStyle={
+    display:"flex",
+    marginTop:"15px",
+    flexDirection:"column",
+    justifyContent: "center",
+    alignItems:"center",
   }
 
   const apiCall=async(cityName)=>{
@@ -93,38 +100,32 @@ const SwipeWeather = () => {
   
   for (let i=0; i<cities.length; i++){
     slides.push(
-      <SwiperSlide key={`slide-${i}`} tag="div" style={{paddingBottom:"120px"}}>
-        <div>
-          <img src={iconId} alt="weather-icon" style={weatherContainer} />
+      <SwiperSlide key={`slide-${i}`} tag="div" style={{paddingBottom:"10px"}}>
+        <div style={mainInfoStyle}>
+          <h1>{responseData.name}</h1>
+          <img src={iconId} alt="weather-icon"  width="400px"/>
+          <h3>{responseData.weather[0].main}</h3>
         </div>
         <div style={weatherContainer}>
-          <div>
-            <h3>{responseData.name}</h3>
              <h1>{responseData.main.temp}&#8451;</h1>
+          <ul style={{marginTop:"30px"}}>
+            <li>
              <p className="small-text">Feels Like: {responseData.main.feels_like}&#8451;</p>
-          </div>
-          <div>
-            <p className="small-text">Humidity: {responseData.main.humidity}&#37;</p>
+            </li>
+            <li>
+              <p className="small-text">Humidity: {responseData.main.humidity}&#37;</p>
+            </li>
+            <li>
             <p className="small-text">Wind: {responseData.wind.speed}KM/H</p>
-            <ul>
-              <li className="small-text">
+            </li>
+            <li className="small-text">
                 <p>H: {responseData.main.temp_max}&#8451;
                 </p></li>
               <li className="small-text">
                 <p>L: {responseData.main.temp_min}&#8451;
                 </p></li>
-            </ul>
+          </ul>
           </div>
-        </div>
-        {/* <h2>{responseData.weather[0].main}</h2>
-          <ul>
-            <li>Current Temp: {responseData.main.temp}&#8451;</li>
-            <li>Feels Like: {responseData.main.feels_like}&#8451;</li>
-            <li>H: {responseData.main.temp_max}&#8451;</li>
-            <li>L: {responseData.main.temp_min}&#8451;</li>
-            <li>Humidity: {responseData.main.humidity}&#37;</li>
-            <li>Wind: {responseData.wind.speed}KM/H</li>
-          </ul> */}
       </SwiperSlide>
     )
   }

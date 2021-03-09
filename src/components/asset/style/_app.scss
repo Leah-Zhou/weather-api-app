@@ -2,8 +2,9 @@
 @import '_colors.scss';
 .container{
   width: 375px;
-  height: 667px;
-  background-color:$bgColor;
+  height: 812px;
+  background-image: linear-gradient(to bottom, #3d106f, #3e146a, #3f1864, #401c5f, #401f5a, #3c1f54, #381e4d, #341e47, #2c1b3e, #251734, #1e142b, #180f22);
+  // background-image: linear-gradient(to left top, #051937, #0b1b38, #101c38, #141e39, #182039);
   margin: 100px auto;
   border-radius: 10px;
   box-shadow: 5px 8px 15px 10px $shadowColor;

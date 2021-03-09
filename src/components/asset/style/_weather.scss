@@ -23,12 +23,36 @@
 .small-text{
   font-size: 13px;
 }
-
+.swiper-slide{
+  padding-bottom: 60px;
+}
+.swiper-pagination{
+  transform: translate3d(0, 10px, 0);
+}
 .swiper-pagination-bullet{
-  background-color: white;
-  opacity: 0.6;
+  background:white;
+  opacity: 0.7;
 }
 .swiper-pagination-bullet-active{
   background-image: linear-gradient(to right top, #fff29b, #a8f1af, #47e6dd, #28d0ff, #8cb1fd);
   opacity:1;
+}
+%flexStyle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-info{
+  @extend %flexStyle;
+  flex-direction: column;
+  margin-top:30px;
+}
+.info-background{
+  @extend %flexStyle;
+  padding-bottom: 20px;
+  background:rgba(gray, 0.4);
+  // padding-bottom: 100px;
+border-radius: 30px;
+margin:0px 30px;
+margin-top:30px;
 }

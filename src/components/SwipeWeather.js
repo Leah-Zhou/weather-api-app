@@ -13,7 +13,7 @@ import rain from './asset/icon/10d.svg';
 import thunderstorm from './asset/icon/11d.svg';
 import snow from './asset/icon/13d.svg';
 import mist from './asset/icon/50d.svg';
-// import './asset/style/_weather.scss';
+import './asset/style/_weather.scss';
 SwiperCore.use(Pagination);
 
 
@@ -23,31 +23,23 @@ const SwipeWeather = () => {
 
   const slides=[];
   const [responseData, setResponseData]=useState('');
+  const [mainWeather, setMainWeather]=useState('');
+  const [mainInfo, setMainInfo]=useState('');
   const [iconId, setIconId] =useState('');
-  const cities =['Toronto','Ottawa','Hamilton'];
-  const weatherContainer ={
-    display:"flex",
-    flexDirection:"row",
-    justifyContent: "center",
-    alignItems:"center",
-    margin: "10px",
-  }
-  const mainInfoStyle={
-    display:"flex",
-    marginTop:"15px",
-    flexDirection:"column",
-    justifyContent: "center",
-    alignItems:"center",
-  }
+  const [wind, setWind]=useState('');
+  const cities =['Toronto','Ottawa','London','Hamilton','Kitchener'];
 
   const apiCall=async(cityName)=>{
     const API_KEY =`5dd0480be9870a0a40413a3f9f49139e`;
-      let city_name=cityName;
+         let city_name=cityName;
     const url=`https://api.openweathermap.org/data/2.5/weather?q=${city_name}, ca&appid=${API_KEY}&units=metric`;
 
     const request =axios.get(url);
     const response =await request;
     setResponseData(response.data);
+    setMainWeather(response.data.weather[0]);
+    setMainInfo(response.data.main);
+    setWind(response.data.wind)
     let iconId = response.data.weather[0].icon;
     let iconNum = iconId.replace(/\D/g, ""); 
     let selectIcon ="";
@@ -94,35 +86,34 @@ const SwipeWeather = () => {
 
  function callCity(cityIndex){
     let onCallCity =cities[cityIndex]
-    console.log(onCallCity)
     apiCall(onCallCity);
  }
   
   for (let i=0; i<cities.length; i++){
     slides.push(
-      <SwiperSlide key={`slide-${i}`} tag="div" style={{paddingBottom:"10px"}}>
-        <div style={mainInfoStyle}>
+      <SwiperSlide key={`slide-${i}`} tag="div">
+        <div className="main-info">
           <h1>{responseData.name}</h1>
           <img src={iconId} alt="weather-icon"  width="400px"/>
-          <h3>{responseData.weather[0].main}</h3>
+          <h3>{mainWeather.main}</h3>
         </div>
-        <div style={weatherContainer}>
-             <h1>{responseData.main.temp}&#8451;</h1>
-          <ul style={{marginTop:"30px"}}>
+        <div className="info-background">
+             <h1>{mainInfo.temp}&#8451;</h1>
+          <ul>
             <li>
-             <p className="small-text">Feels Like: {responseData.main.feels_like}&#8451;</p>
+             <p className="small-text">Feels Like: {mainInfo.feels_like}&#8451;</p>
             </li>
             <li>
-              <p className="small-text">Humidity: {responseData.main.humidity}&#37;</p>
+              <p className="small-text">Humidity: {mainInfo.humidity}&#37;</p>
             </li>
             <li>
-            <p className="small-text">Wind: {responseData.wind.speed}KM/H</p>
+            <p className="small-text">Wind: {wind.speed}KM/H</p>
             </li>
             <li className="small-text">
-                <p>H: {responseData.main.temp_max}&#8451;
+                <p>H: {mainInfo.temp_max}&#8451;
                 </p></li>
               <li className="small-text">
-                <p>L: {responseData.main.temp_min}&#8451;
+                <p>L: {mainInfo.temp_min}&#8451;
                 </p></li>
           </ul>
           </div>

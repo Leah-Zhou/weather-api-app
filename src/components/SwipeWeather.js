@@ -4,15 +4,15 @@ import SwiperCore, { Pagination } from 'swiper/core';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/swiper.scss';
 import axios from 'axios';
-import sunny from './asset/icon/01d.svg';
-import fewCloud from './asset/icon/02d.svg';
-import scatteredClouds from './asset/icon/03d.svg';
-import brokenCloud from './asset/icon/04d.svg';
-import showerRain from './asset/icon/09d.svg';
-import rain from './asset/icon/10d.svg';
-import thunderstorm from './asset/icon/11d.svg';
-import snow from './asset/icon/13d.svg';
-import mist from './asset/icon/50d.svg';
+import sunny from './asset/icon/clearSky.svg';
+import fewCloud from './asset/icon/fewCloud.svg';
+import scatteredClouds from './asset/icon/scatteredClouds.svg';
+import brokenCloud from './asset/icon/brokenCloud.svg';
+import showerRain from './asset/icon/showerRain.svg';
+import rain from './asset/icon/rain.svg';
+import thunderstorm from './asset/icon/thunderStorm.svg';
+import snow from './asset/icon/snow.svg';
+import mist from './asset/icon/mist.svg';
 import './asset/style/_weather.scss';
 SwiperCore.use(Pagination);
 
@@ -94,7 +94,7 @@ const SwipeWeather = () => {
       <SwiperSlide key={`slide-${i}`} tag="div">
         <div className="main-info">
           <h1>{responseData.name}</h1>
-          <img src={iconId} alt="weather-icon"  width="400px"/>
+          <img src={iconId} alt="weather-icon"  width="200px"/>
           <h3>{mainWeather.main}</h3>
         </div>
         <div className="info-background">

@@ -94,20 +94,20 @@ const SwipeWeather = () => {
       <SwiperSlide key={`slide-${i}`} tag="div">
         <div className="main-info">
           <h1>{responseData.name}</h1>
-          <img src={iconId} alt="weather-icon"  width="200px"/>
-          <h3>{mainWeather.main}</h3>
+          <img src={iconId} alt="weather-icon"  width="65%" height="270px"/>
+          <h3>{mainWeather.description}</h3>
         </div>
         <div className="info-background">
-             <h1>{mainInfo.temp}&#8451;</h1>
+             <h1>{mainInfo.temp}<span>&#176;</span>C</h1>
           <ul>
             <li>
-             <p className="small-text">Feels Like: {mainInfo.feels_like}&#8451;</p>
+             <p className="small-text">Feels Like: {mainInfo.feels_like}<span>&#8451;</span></p>
             </li>
             <li>
-              <p className="small-text">Humidity: {mainInfo.humidity}&#37;</p>
+              <p className="small-text">Humidity: {mainInfo.humidity}<span>&#37;</span></p>
             </li>
             <li>
-            <p className="small-text">Wind: {wind.speed}KM/H</p>
+            <p className="small-text">Wind: {wind.speed}Km/h</p>
             </li>
             <li className="small-text">
                 <p>H: {mainInfo.temp_max}&#8451;

@@ -1,28 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import CallApi from './GetWeather';
+import PrintWeather from './PrintWeather';
 
-import PrintWeather from './PrintWeather'
+ 
 
 
 
 const Form = () => {
 
   const [weatherInfo, setWeatherInfo]=useState({cityName:"",description:"", temp:"",feelLike:"", humidity:"",windSpeed:"", tempMax:"", tempMin:"", iconId:""});
-  const [isSearch, setIsSearch]=useState(false)
+  const [isSearch, setIsSearch]=useState(false);
+
   const submitForm=async(e)=>{
     e.preventDefault();
     let searchCity = e.target.city.value;
-    console.log(searchCity);
-
-   let response = await CallApi(searchCity);
-   console.log(response);
-  //  console.log('get');
-   setWeatherInfo(response);
-   setIsSearch(true);
-   e.target.reset();
+    if(searchCity.length>0){
+      let response = await CallApi(searchCity);
+      //  console.log(response);
+       setWeatherInfo(response);
+       setIsSearch(true);
+       e.target.reset();
+    }else{
+      return
+    }
   };
-  // useEffect(()=>{
-  // console.log(weatherInfo)}, [weatherInfo])
+
+//   useEffect(()=>{
+//   gsap.from(btnRef.current, {y:-100, duration:1})
+// }, []);
 
   return ( 
     <div className="container">

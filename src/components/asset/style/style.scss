@@ -1,18 +1,33 @@
-@import '_app.scss';
-@import '_weather.scss';
-@import '_colors.scss';
-
+// @use './helper/colors' as *;
+@use './helper/combine' as *;
+@use 'weather';
+@use 'app';
 
 
 *{
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1.5px;
   color:$fontColor;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  line-height: 1.75;
 }
 h1, h2, h3{
   font-weight: 800;
+}
+ul{
+  padding:0 !important;
 }
 li{
   list-style: none;
 }
 
+.btn-style{
+  background-color: $primary;
+  padding:0.8em 1em;
+  margin:1em;
+  border-radius: 20px;
+  border:none;
+  min-width: 120px;
+}

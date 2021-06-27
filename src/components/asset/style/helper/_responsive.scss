@@ -1,0 +1,35 @@
+// @mixin breakpoint($size){
+//   @if($size=="mobile"){
+//     @media(max-width:"680px"){
+//       @content
+//     }
+//   }
+//   @else if($size=="tablet"){
+//     @media (min-width:"681px"){
+//       @content
+//     }
+//   }
+//   @else if($size=="desktop"){
+//     @media (min-width:"861px"){
+//       @content
+//     }
+// }
+// }
+
+@mixin breakpoint($screenSize) {
+  @if($screenSize=="mobile"){
+    @media(min-width:"320px") and (max-width:"767px"){
+      @content
+    }
+  }
+  @else if($screenSize=="tablet"){
+    @media(min-width:"768px" ){
+      @content
+    }
+  }
+  @else if($screenSize=="desktop"){
+    @media(min-width: "992px"){
+       @content
+    }
+  }
+}

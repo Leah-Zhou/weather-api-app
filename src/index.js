@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.js';
+import Form from './components/Form.js';
 import './components/asset/style/style.scss';
 
-ReactDOM.render(<App/>,
+ReactDOM.render(<Form/>,
   document.getElementById('root')
 );
 

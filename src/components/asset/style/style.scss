@@ -28,5 +28,11 @@ li{
   margin:1em;
   border-radius: 20px;
   border:none;
-  min-width: 120px;
+  min-width: 150px;
+  box-shadow: -1px 3px 3px 0 rgba(80, 80, 80, .2);
+  transition: all .4s ease;
+}
+.btn-style:hover{
+  box-shadow: -1px 6px 10px 0 rgba(120, 60, 20, .2);
+  background-color: $darkPrimary;
 }

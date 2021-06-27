@@ -12,17 +12,16 @@
   position: relative;
   text-align: center;
   gap:3em;
-  // @include breakpoint('desktop'){
-  //   flex-flow: row nowrap;
-  // }
 }
-
+.detail-info{
+  margin-top:1.6em;
+}
 @keyframes floating {
   0%{
     transform:translateX(0px)
   }
   50%{
-    transform:translateX(10px)
+    transform:translateX(30px)
   }
   100%{
     transform:translateX(0px)
@@ -37,7 +36,7 @@
     top:-20%;
     left:-5%;
     z-index: -1;
-    animation:floating 4s infinite forwards;
+    animation:floating 10s infinite forwards ease-in;
   }
 }
 .weather-icon-right{
@@ -51,6 +50,6 @@
     top:-70%;
     right:-10%;
     z-index: -1;
-    animation:floating 4s 2s infinite;
+    animation:floating 8s 2s infinite forwards;
   }
 }

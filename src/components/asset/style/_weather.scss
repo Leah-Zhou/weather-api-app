@@ -27,6 +27,18 @@
     transform:translateX(0px)
   }
 }
+
+@keyframes floating {
+  0%{
+    transform:translateX(0px)
+  }
+  50%{
+    transform:translateX(10px)
+  }
+  100%{
+    transform:translateX(0px)
+  }
+}
 .weather-icon{
   width: 60%;
   min-width: 200px;

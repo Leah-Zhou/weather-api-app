@@ -23,7 +23,20 @@
   @include breakpoint("desktop"){
     position: absolute;
     top:-20%;
-    left:20%;
+    left:-5%;
+    z-index: -1;
+  }
+}
+.weather-icon-right{
+  display: none;
+  width: 70%;
+  min-width: 200px;
+  max-width: 400px;
+  @include breakpoint("desktop"){
+    display:inline-block;
+    position: absolute;
+    top:-70%;
+    right:-10%;
     z-index: -1;
   }
 }

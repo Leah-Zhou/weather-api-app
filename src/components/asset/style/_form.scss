@@ -1,0 +1,36 @@
+
+// // @import '_colors.scss';
+@use './helper/combine' as *;
+
+.container{
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column ;
+  form{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 4em 1em 1em 1em;
+    justify-content: center;
+    align-items:center;
+    h3{
+      color:$darkPrimary;  
+      margin-bottom: 1em;  
+    }
+  }
+}
+input[name="city"]{
+  width:20em;
+  background-color: transparent;
+  padding: 0.6em;
+  border:none;
+  border-bottom:1px solid gray;
+  margin: 3em 1em;
+  transition: all 0.3s ease-in;
+  &:focus{
+    border-bottom: 1.2px solid $primary;
+    outline: none;
+    width: 25em;
+  }
+}
+

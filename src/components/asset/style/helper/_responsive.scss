@@ -1,20 +1,4 @@
-// @mixin breakpoint($size){
-//   @if($size=="mobile"){
-//     @media(max-width:"680px"){
-//       @content
-//     }
-//   }
-//   @else if($size=="tablet"){
-//     @media (min-width:"681px"){
-//       @content
-//     }
-//   }
-//   @else if($size=="desktop"){
-//     @media (min-width:"861px"){
-//       @content
-//     }
-// }
-// }
+
 
 @mixin breakpoint($screenSize) {
   @if($screenSize=="mobile"){

@@ -1,7 +1,7 @@
 // @use './helper/colors' as *;
 @use './helper/combine' as *;
 @use 'weather';
-@use 'app';
+@use 'form';
 
 
 *{
@@ -22,7 +22,6 @@ ul{
 li{
   list-style: none;
 }
-
 .btn-style{
   background-color: $primary;
   padding:0.8em 1em;

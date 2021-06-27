@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import CallApi from './GetWeather';
 import PrintWeather from './PrintWeather';
 
@@ -25,9 +25,6 @@ const Form = () => {
     }
   };
 
-//   useEffect(()=>{
-//   gsap.from(btnRef.current, {y:-100, duration:1})
-// }, []);
 
   return ( 
     <div className="container">

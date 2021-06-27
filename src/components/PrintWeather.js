@@ -6,11 +6,11 @@ const PrintWeather =(props)=>{
   let weatherImgLeft=useRef(null);
   let weatherImgRight=useRef(null);
   let weatherInfo=useRef(null);
-  let tl=gsap.timeline();
 
     useEffect(()=>{
+      let tl=gsap.timeline();
   tl.from(weatherInfo.current, {opacity:0, y:"100", duration:1, ease:"back.out"})
-  .from([weatherImgLeft.current, weatherImgRight.current], {y:-100, opacity:0, duration:1, ease:"power3.out(1.25)"})
+  .from([weatherImgLeft.current, weatherImgRight.current], {y:-160, opacity:0, duration:1, ease:"back.out"},"-=0.5")
 }, [props.name])
 ;
 

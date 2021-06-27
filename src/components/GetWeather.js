@@ -1,8 +1,4 @@
-import React, { useState,useEffect} from 'react';
-// import {Swiper, SwiperSlide} from 'swiper/react';
-// import SwiperCore, { Pagination } from 'swiper/core';
-// import 'swiper/components/pagination/pagination.scss';
-// import 'swiper/swiper.scss';
+// import React from 'react';
 import axios from 'axios';
 import './asset/style/_weather.scss';
 import sunny from './asset/icon/clearSky.svg';
@@ -17,8 +13,6 @@ import mist from './asset/icon/mist.svg';
 
 
 
-
-
   const CallApi=async(city)=>{
       const API_KEY =`5dd0480be9870a0a40413a3f9f49139e`;
            let city_name=city;
@@ -29,6 +23,7 @@ import mist from './asset/icon/mist.svg';
         let response=await request;
          
         try{
+           if(response.status===200){
             const cityName=response.data.name;
             const mainWeather =response.data.weather[0];
             const description=mainWeather.description;
@@ -75,14 +70,14 @@ import mist from './asset/icon/mist.svg';
                   default:
                     console.log(`no image`);
              }
-
              const currentWeather ={cityName, description, temp, feelLike, tempMin, tempMax, humidity, windSpeed, iconId}
-    
+  
             return(
               currentWeather
             )
+           }
         }catch(err){
-          console.log(err.message)
+          console.log(err.message);
         }
 
     }
